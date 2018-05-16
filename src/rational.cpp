@@ -103,7 +103,7 @@ Rational Rational::operator+(const Rational &r) const
 
 Rational Rational::operator-(const Rational &r) const
 {
-    return Rational(num - r.num, denom - r.denom);
+    return Rational((num * r.denom) - (r.num * denom), denom * r.denom);
 }
 
 Rational Rational::operator*(const Rational &r) const
