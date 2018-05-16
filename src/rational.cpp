@@ -113,7 +113,7 @@ Rational Rational::operator*(const Rational &r) const
 
 Rational Rational::operator/(const Rational &r) const
 {
-    return Rational(num / r.denom, denom / r.num);
+    return Rational(num * r.denom, denom * r.num);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
