@@ -11,5 +11,8 @@ interactive:
 cmdline:
 	$(CC) ./src/rational-cmdline.cpp $(SOURCE) $(INCLUDES) -o rationalCmdline.out
 
+test:
+	$(CC) ./tests/test_rational.cpp $(SOURCE) $(INCLUDES) -lboost_unit_test_framework -o testRational.out  
+
 clean:
 	rm -rf *.out
