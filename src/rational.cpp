@@ -159,7 +159,7 @@ Rational Rational::abs(const Rational &r)
 
 Rational Rational::negate(const Rational &r)
 {
-    return Rational(-(r.num), -(r.denom));
+    return Rational(-(r.num), r.denom);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

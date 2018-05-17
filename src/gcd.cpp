@@ -1,4 +1,4 @@
-#include <cstdlib> // for abs(long long int)
+#include <cstdlib>   // for abs(long long int)
 #include <algorithm> // for min()
 
 #include "gcd.h"
@@ -22,6 +22,15 @@ long long int gcd(long long int i, long long int j)
     }
 
     return potentialFactor;
+
+    // long long int a = std::abs(i);
+    // long long int b = std::abs(j);
+
+    // if (a == 0)
+    // {
+    //     return b;
+    // }
+    // return gcd(b % a, a);
 }
 
 } // End of namespace ExactArithmetic

@@ -5,6 +5,7 @@
 #include "rational.h"
 
 using namespace ExactArithmetic;
+namespace utf = boost::unit_test;
 
 // Test suite: arithmetic_operations
 BOOST_AUTO_TEST_SUITE(arithmetic_operations)
@@ -71,8 +72,47 @@ BOOST_AUTO_TEST_CASE(double_constructor)
 BOOST_AUTO_TEST_SUITE_END()
 // End of test suite: constructors
 
+// Test suite: gcd
+BOOST_AUTO_TEST_SUITE(gcd)
+BOOST_AUTO_TEST_CASE(obvious)
+{
+  Rational veryBigRationalNumber(1000000000000000000, 2000000000000000000);
+  BOOST_CHECK_EQUAL(veryBigRationalNumber, Rational(1, 2));
+}
+
+// BOOST_AUTO_TEST_CASE(random)
+// {
+//   Rational veryBigRationalNumber(98822773366119922, 22773399118822);
+//   BOOST_CHECK_EQUAL(veryBigRationalNumber, Rational(49411386683059961, 11386699559411));
+// }
+BOOST_AUTO_TEST_SUITE_END()
+// End of test suite: gcd
+
+
+BOOST_AUTO_TEST_SUITE(miscellaneous)
 BOOST_AUTO_TEST_CASE(abs_function)
 {
   Rational negativeOneTwo(-1, 2);
   BOOST_CHECK_EQUAL(Rational::abs(negativeOneTwo), Rational(1, 2));
 }
+
+BOOST_AUTO_TEST_CASE(negative)
+{
+  Rational negativeOneTwo(-1, 2);
+  Rational negativeOneTwoOnDenom(1, -2);
+  BOOST_CHECK_EQUAL(negativeOneTwo, Rational(-1, 2));
+  BOOST_CHECK_EQUAL(negativeOneTwoOnDenom, Rational(-1, 2));
+}
+
+BOOST_AUTO_TEST_CASE(negate_function)
+{
+  Rational negativeOneTwo(-1, 2);
+  Rational negativeOneTwoOnDenom(1, -2);
+
+  Rational oneTwo(1, 2);
+
+  BOOST_CHECK_EQUAL(Rational::negate(negativeOneTwo), Rational(1, 2));
+  BOOST_CHECK_EQUAL(Rational::negate(negativeOneTwoOnDenom), Rational(1, 2));
+  BOOST_CHECK_EQUAL(Rational::negate(oneTwo), Rational(-1, 2));
+}
+BOOST_AUTO_TEST_SUITE_END()
