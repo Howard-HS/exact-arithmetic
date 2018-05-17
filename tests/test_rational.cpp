@@ -43,14 +43,14 @@ BOOST_AUTO_TEST_CASE(default_constructor)
 BOOST_AUTO_TEST_CASE(two_thirds)
 {
   // Test a num/denom constructor
-  Rational twoThirds(2,3);
+  Rational twoThirds(2, 3);
   BOOST_CHECK_EQUAL(twoThirds, Rational(2, 3));
 }
 
 BOOST_AUTO_TEST_CASE(four_eight)
 {
   // Test normalization
-  Rational fourEight(4,8);
+  Rational fourEight(4, 8);
   BOOST_CHECK_EQUAL(fourEight, Rational(1, 2));
 }
 
@@ -70,3 +70,9 @@ BOOST_AUTO_TEST_CASE(double_constructor)
 
 BOOST_AUTO_TEST_SUITE_END()
 // End of test suite: constructors
+
+BOOST_AUTO_TEST_CASE(abs_function)
+{
+  Rational negativeOneTwo(-1, 2);
+  BOOST_CHECK_EQUAL(Rational::abs(negativeOneTwo), Rational(1, 2));
+}
