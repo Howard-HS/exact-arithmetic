@@ -154,7 +154,7 @@ Rational &Rational::operator/=(const Rational &r)
 
 Rational Rational::abs(const Rational &r)
 {
-    return Rational(r.num, std::abs(r.denom));
+    return Rational(std::abs(r.num), std::abs(r.denom));
 }
 
 Rational Rational::negate(const Rational &r)
