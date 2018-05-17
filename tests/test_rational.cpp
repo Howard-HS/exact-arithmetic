@@ -80,11 +80,11 @@ BOOST_AUTO_TEST_CASE(obvious)
   BOOST_CHECK_EQUAL(veryBigRationalNumber, Rational(1, 2));
 }
 
-// BOOST_AUTO_TEST_CASE(random)
-// {
-//   Rational veryBigRationalNumber(98822773366119922, 22773399118822);
-//   BOOST_CHECK_EQUAL(veryBigRationalNumber, Rational(49411386683059961, 11386699559411));
-// }
+BOOST_AUTO_TEST_CASE(random)
+{
+  Rational veryBigRationalNumber(98822773366119922, 22773399118822);
+  BOOST_CHECK_EQUAL(veryBigRationalNumber, Rational(49411386683059961, 11386699559411));
+}
 BOOST_AUTO_TEST_SUITE_END()
 // End of test suite: gcd
 

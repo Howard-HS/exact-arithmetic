@@ -13,24 +13,24 @@ long long int gcd(long long int i, long long int j)
  *  Euclid's Algorithm would be much more efficient.
  */
 {
-    long long int potentialFactor = std::min(std::abs(i), std::abs(j));
-    if (potentialFactor == 0) return 1; // To avoid returning 0 when one argument is 0.
+    // long long int potentialFactor = std::min(std::abs(i), std::abs(j));
+    // if (potentialFactor == 0) return 1; // To avoid returning 0 when one argument is 0.
 
-    for (; potentialFactor > 1; --potentialFactor)
-    {
-        if (i % potentialFactor == 0 && j % potentialFactor == 0) break; // Found a common divisor.
-    }
-
-    return potentialFactor;
-
-    // long long int a = std::abs(i);
-    // long long int b = std::abs(j);
-
-    // if (a == 0)
+    // for (; potentialFactor > 1; --potentialFactor)
     // {
-    //     return b;
+    //     if (i % potentialFactor == 0 && j % potentialFactor == 0) break; // Found a common divisor.
     // }
-    // return gcd(b % a, a);
+
+    // return potentialFactor;
+
+    long long int a = std::abs(i);
+    long long int b = std::abs(j);
+
+    if (a == 0)
+    {
+        return b;
+    }
+    return gcd(b % a, a);
 }
 
 } // End of namespace ExactArithmetic
